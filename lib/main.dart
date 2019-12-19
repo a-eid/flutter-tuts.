@@ -12,8 +12,8 @@ class App extends StatelessWidget {
     return CupertinoApp(
       title: 'Flutter Demo',
       // home: Home(),
-      home: Example(),
-      // home: MasterSlave(),
+      // home: Example(),
+      home: MasterSlave(),
     );
   }
 }
