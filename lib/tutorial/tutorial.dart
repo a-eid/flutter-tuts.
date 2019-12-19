@@ -2,10 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:tuts/assets.dart';
 
 class Example extends StatelessWidget {
-  Widget image(BuildContext context) => Image.asset(images["lake"],
-      fit: BoxFit.cover,
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.37);
+  Widget image(BuildContext context) {
+    return MediaQuery.of(context).orientation == Orientation.portrait
+        ? Image.asset(
+            images["lake"],
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.35,
+          )
+        : Image.asset(
+            images["lake"],
+            fit: BoxFit.cover,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width * .45,
+          );
+  }
 
   final Widget headerText = Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,19 +106,37 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
     ),
   );
 
+  Widget _buildVertical(BuildContext context) {
+    return Column(
+      children: <Widget>[image(context), header(), actionsRow(), description],
+    );
+  }
+
+  Widget _buildHorizontal(context) {
+    return Row(
+      children: <Widget>[
+        image(context),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[header(), actionsRow(), description],
+          ),
+        )
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            image(context),
-            header(),
-            actionsRow(),
-            description
-          ],
-        ),
-      ),
+    return OrientationBuilder(
+      builder: (BuildContext context, Orientation orientation) {
+        Widget child = orientation == Orientation.portrait
+            ? _buildVertical(context)
+            : _buildHorizontal(context);
+        return Scaffold(
+          body: child,
+        );
+      },
     );
   }
 }
