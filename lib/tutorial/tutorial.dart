@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:tuts/assets.dart';
 
 class Example extends StatelessWidget {
-  Widget image(BuildContext context) => Image.asset(
-        images["lake"],
-        fit: BoxFit.cover,
-      );
+  Widget image(BuildContext context) => Image.asset(images["lake"],
+      fit: BoxFit.cover,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height * 0.37);
 
   final Widget headerText = Column(
     crossAxisAlignment: CrossAxisAlignment.start,
