@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tuts/assets.dart';
 
@@ -39,8 +40,8 @@ class Example extends StatelessWidget {
     ],
   );
 
-  final Widget headerStar = InkWell(
-    onTap: () {},
+  final Widget headerStar = CupertinoButton(
+    onPressed: () {},
     child: Row(
       children: <Widget>[
         Icon(Icons.star),
@@ -65,23 +66,20 @@ class Example extends StatelessWidget {
 
   Widget action({String text, IconData icon, Function onTap}) {
     return Expanded(
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Icon(icon),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Text(
-                  text,
-                  style: TextStyle(fontSize: 15),
-                ),
+      child: CupertinoButton(
+        onPressed: () {},
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Icon(icon),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Text(
+                text,
+                style: TextStyle(fontSize: 15),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -117,9 +115,12 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
       children: <Widget>[
         image(context),
         Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[header(), actionsRow(), description],
+          child: SafeArea(
+            left: false,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[header(), actionsRow(), description],
+            ),
           ),
         )
       ],
@@ -133,8 +134,13 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
         Widget child = orientation == Orientation.portrait
             ? _buildVertical(context)
             : _buildHorizontal(context);
-        return Scaffold(
-          body: child,
+        // // return Scaffold(
+        //   body: child,
+        // );
+
+        return CupertinoPageScaffold(
+          navigationBar: null,
+          child: child,
         );
       },
     );
