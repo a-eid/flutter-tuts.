@@ -14,13 +14,14 @@ class _MasterSlaveState extends State<MasterSlave> {
       color: Colors.blue,
       child: Row(
         children: <Widget>[
-          Expanded(child: MasterWidget(onItemTap: toDetails)),
+          Expanded(flex: 2, child: MasterWidget(onItemTap: toDetails)),
           Container(
             color: Colors.grey,
             child:
                 SizedBox(width: 8, height: MediaQuery.of(context).size.height),
           ),
           Expanded(
+              flex: 3,
               child:
                   DetailsWidget(index: index == null ? null : index.toString()))
         ],
@@ -97,12 +98,11 @@ class DetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final navigationBar =
+        index != null ? CupertinoNavigationBar(middle: Text(index)) : null;
+
     return CupertinoPageScaffold(
-      navigationBar: index != null
-          ? CupertinoNavigationBar(
-              middle: Text(index),
-            )
-          : null,
+      navigationBar: navigationBar,
       child: Center(
         child: index == null ? Text("No Item Selected") : Text(index),
       ),
