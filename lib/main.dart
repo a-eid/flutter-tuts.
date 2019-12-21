@@ -2,9 +2,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tuts/master-slave.dart';
-import 'tutorial/tutorial.dart';
+// import 'tutorial/tutorial.dart';
+// import 'chart/main.dart' as chart;
+import 'animations/main.dart' as animation;
 
-void main() => runApp(App());
+void main() => runApp(animation.main());
 
 class App extends StatelessWidget {
   @override
