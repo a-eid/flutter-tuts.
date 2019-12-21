@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:tuts/master-slave.dart';
 // import 'tutorial/tutorial.dart';
 // import 'chart/main.dart' as chart;
-import 'animations/main.dart' as animation;
+// import 'animations/main.dart' as animation;
+// import 'misc/stateless-flutter.dart' as stless;
+import 'provider/counter/main.dart' as counter;
 
-void main() => runApp(animation.main());
+void main() => runApp(counter.main());
 
 class App extends StatelessWidget {
   @override
