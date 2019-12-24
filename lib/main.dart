@@ -6,9 +6,12 @@ import 'package:tuts/master-slave.dart';
 // import 'chart/main.dart' as chart;
 // import 'animations/main.dart' as animation;
 // import 'misc/stateless-flutter.dart' as stless;
-import 'provider/counter/main.dart' as counter;
+// import 'provider/counter/main.dart' as counter;
+// import './data-backend/main.dart' as dataBackend;
+import 'darktheme/main.dart' as theme;
 
-void main() => runApp(counter.main());
+// void main() => theme.main();
+void main() => runApp(theme.main());
 
 class App extends StatelessWidget {
   @override
