@@ -8,10 +8,11 @@ import 'package:tuts/master-slave.dart';
 // import 'misc/stateless-flutter.dart' as stless;
 // import 'provider/counter/main.dart' as counter;
 // import './data-backend/main.dart' as dataBackend;
-import 'darktheme/main.dart' as theme;
+// import 'darktheme/main.dart' as theme;
+import 'tabs/main.dart' as tabs;
 
 // void main() => theme.main();
-void main() => runApp(theme.main());
+void main() => runApp(tabs.main());
 
 class App extends StatelessWidget {
   @override
