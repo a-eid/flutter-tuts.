@@ -24,109 +24,108 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBarContainer(
-        margin: 20,
-        color: Colors.red,
-        activeColor: Colors.blue,
-        onTap: (index) {
-          print('tapped $index');
-        },
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Icon(
-                  Icons.ac_unit,
-                  color: Colors.white,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Text(
-                  "Test",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            top: 0,
+            child: Container(
+              color: Colors.black45,
+            ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Icon(
-                  Icons.ac_unit,
-                  color: Colors.white,
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: BottomNavigationBarContainer(
+              bgColor: Colors.grey[300],
+              color: Colors.red,
+              activeColor: Colors.blue,
+              onTap: (index) {
+                print('tapped $index');
+              },
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Icon(
+                        Icons.ac_unit,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Text(
+                        "Test",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Text(
-                  "Test",
-                  style: TextStyle(color: Colors.white),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Icon(
+                        Icons.ac_unit,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Text(
+                        "Test",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Icon(
-                  Icons.ac_unit,
-                  color: Colors.white,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Icon(
+                        Icons.ac_unit,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Text(
+                        "Test",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Text(
-                  "Test",
-                  style: TextStyle(color: Colors.white),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Icon(
+                        Icons.ac_unit,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Text(
+                        "Test",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Icon(
-                  Icons.ac_unit,
-                  color: Colors.white,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: Text(
-                  "Test",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-          // Column(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: <Widget>[
-          //     Padding(
-          //       padding: EdgeInsets.all(2),
-          //       child: Icon(
-          //         Icons.ac_unit,
-          //         color: Colors.white,
-          //       ),
-          //     ),
-          //     Padding(
-          //       padding: EdgeInsets.all(2),
-          //       child: Text(
-          //         "Test",
-          //         style: TextStyle(color: Colors.white),
-          //       ),
-          //     ),
-          //   ],
-          // ),
+              ],
+            ),
+          )
         ],
       ),
     );

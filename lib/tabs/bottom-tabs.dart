@@ -4,18 +4,19 @@ import 'package:flutter/material.dart';
 
 class BottomNavigationBarContainer extends StatefulWidget {
   final List<Widget> children;
-  final int margin;
+
   final Function onTap;
   final Color color;
+  final Color bgColor;
   final Color activeColor;
 
   const BottomNavigationBarContainer({
     this.children,
-    this.margin,
     key,
     this.onTap,
     this.color = Colors.blue,
     this.activeColor = Colors.green,
+    this.bgColor = Colors.transparent,
   }) : super(key: key);
 
   @override
@@ -31,8 +32,8 @@ class _BottomNavigationBarContainerState
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final length = this.widget.children.length;
-    final margins = (length + 1) * widget.margin;
-    final space = min((width - margins) / length, 70).toDouble();
+    // final margins = (length + 1) * widget.margin;
+    final space = min((width) / length, 70).toDouble();
 
     final List<Widget> chs = [];
 
@@ -45,7 +46,7 @@ class _BottomNavigationBarContainerState
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(space / 2),
           ),
-          margin: EdgeInsets.symmetric(horizontal: widget.margin / 2),
+          // margin: EdgeInsets.symmetric(horizontal: widget.margin / 2),
           child: Material(
             color: acitveIndex == i ? widget.activeColor : widget.color,
             borderRadius: BorderRadius.circular(space / 2),
@@ -68,10 +69,18 @@ class _BottomNavigationBarContainerState
 
     return SafeArea(
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: widget.margin / 2),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: chs),
-        // render:
+        margin: EdgeInsets.symmetric(horizontal: 10),
+        // color: Colors.blue,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(space / 2),
+          color: widget.bgColor,
+        ),
+        child: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: chs,
+          ),
+        ),
       ),
     );
   }
