@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 Widget main() {
+  // disable other Orientations. but portraitUp
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   return MaterialApp(
     home: App(),
   );
@@ -26,7 +29,18 @@ class _ChartState extends State<Chart> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(),
+      child: Center(
+          child: Row(
+        children: <Widget>[
+          Container(
+            child: Container(),
+          ),
+          Container(),
+          Container(),
+          Container(),
+          Container(),
+        ],
+      )),
     );
   }
 }

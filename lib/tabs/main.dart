@@ -108,6 +108,25 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: <Widget>[
+          //     Padding(
+          //       padding: EdgeInsets.all(2),
+          //       child: Icon(
+          //         Icons.ac_unit,
+          //         color: Colors.white,
+          //       ),
+          //     ),
+          //     Padding(
+          //       padding: EdgeInsets.all(2),
+          //       child: Text(
+          //         "Test",
+          //         style: TextStyle(color: Colors.white),
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );

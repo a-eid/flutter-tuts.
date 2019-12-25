@@ -1,0 +1,29 @@
+# app state...
+
+- User Preferences.
+- Login info.
+- Notifications in a social networking app.
+- shopping cart in an ecommerce app.
+- read/unread state of articles in a news app.
+
+# Provider ..
+
+- expose value.
+
+```dart
+Provider(
+  create: (_) => new MyModel(),
+  child: ...
+)
+
+// pass variables that can change over time
+int count;
+ProxyProvider0(
+  update: (_, __) => new MyModel(count),
+  child: ...
+);
+```
+
+- changeNotifier.
+- changeNotifierProvider.
+- consumer.

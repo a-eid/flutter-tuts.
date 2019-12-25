@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarContainer extends StatefulWidget {
@@ -30,12 +32,13 @@ class _BottomNavigationBarContainerState
     final width = MediaQuery.of(context).size.width;
     final length = this.widget.children.length;
     final margins = (length + 1) * widget.margin;
-    final space = (width - margins) / length;
+    final space = min((width - margins) / length, 70).toDouble();
 
     final List<Widget> chs = [];
 
     for (int i = 0; i < widget.children.length; i++) {
-      Widget child = Expanded(
+      Widget child = Flexible(
+        fit: FlexFit.loose,
         child: Container(
           width: space,
           height: space,
@@ -66,7 +69,8 @@ class _BottomNavigationBarContainerState
     return SafeArea(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: widget.margin / 2),
-        child: Row(children: chs),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: chs),
         // render:
       ),
     );
